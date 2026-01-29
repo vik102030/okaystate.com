@@ -2,139 +2,70 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>After check-in</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiet Check-In</title>
 <style>
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-  background: #0f1115;
-  color: #f2f2f2;
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Inter,sans-serif;
+  background:#0f1115;
+  color:#f2f2f2;
 }
 .screen {
-  min-height: 100vh;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 32px;
-  text-align: center;
+  min-height:100vh;
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:32px;
+  text-align:center;
 }
-.screen.active { display: flex; }
-h2 { font-size: 22px; margin-bottom: 12px; }
-p { max-width: 560px; line-height: 1.6; opacity: .9; }
+.screen.active { display:flex; }
+p { max-width:560px; line-height:1.6; opacity:.9; }
 button {
-  margin-top: 28px;
-  padding: 14px 28px;
-  font-size: 16px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  background: #ffffff;
-  color: #000;
+  margin-top:28px;
+  padding:14px 28px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
 }
+.primary { background:#fff; color:#000; }
 </style>
 </head>
 
 <body>
 
-<section class="screen active" id="s1">
-  <h2>Let’s pause for a moment</h2>
+<section class="screen active" id="a1">
   <p>
-    You’re not here to urgently change your life.
-    This is not a plan and not an instruction.
+    You don’t need to rush.
+    Awareness doesn’t come from pushing harder.
+    It comes from noticing honestly.
   </p>
-  <p>
-    It’s a calm observation
-    of what’s happening inside you right now.
-  </p>
-  <button onclick="next(2)">Next</button>
+  <button class="primary" onclick="next(2)">Continue</button>
 </section>
 
-<section class="screen" id="s2">
-  <h2>You’re truly okay</h2>
+<section class="screen" id="a2">
   <p>
-    Feeling tired, uncertain, or lost
-    doesn’t mean weakness
-    and doesn’t mean something is wrong with you.
+    Sometimes clarity disappears before it returns.
+    Transitions often feel like confusion.
   </p>
-  <p>
-    Many people live in constant inner tension,
-    even if outwardly everything looks fine.
-  </p>
-  <button onclick="next(3)">Next</button>
+  <button class="primary" onclick="next(3)">Continue</button>
 </section>
 
-<section class="screen" id="s3">
-  <h2>Often it’s not only about you</h2>
+<section class="screen" id="a3">
   <p>
-    The issue is rarely just a lack of energy or clarity.
-    There is too much pressure, expectation, and uncertainty.
+    Something may have stopped aligning —
+    not dramatically, but quietly over time.
   </p>
-  <p>
-    When the outer world becomes unstable,
-    the inner state follows.
-  </p>
-  <button onclick="next(4)">Next</button>
-</section>
-
-<section class="screen" id="s4">
-  <h2>It can seem easier for others</h2>
-  <p>
-    Many people simply learned
-    to hide insecurity, exhaustion, and fear.
-  </p>
-  <p>
-    They keep going until the inner tension
-    becomes too heavy — and then something breaks.
-  </p>
-  <p>You’re not behind. You noticed it earlier.</p>
-  <button onclick="next(5)">Next</button>
-</section>
-
-<section class="screen" id="s5">
-  <h2>Clarity is not answers</h2>
-  <p>
-    You don’t have to know right now
-    who to be or where to go.
-  </p>
-  <p>
-    Sometimes clarity is simply admitting:
-    “Yes, this is difficult for me. And that’s okay.”
-  </p>
-  <button onclick="next(6)">Next</button>
-</section>
-
-<section class="screen" id="s6">
-  <h2>A small observation</h2>
-  <p>
-    If you feel even slightly calmer,
-    you’ve already done enough.
-  </p>
-  <p>
-    Not because you solved anything,
-    but because you stopped fighting yourself.
-  </p>
-  <button onclick="next(7)">Next</button>
-</section>
-
-<section class="screen" id="s7">
-  <h2>You can go further</h2>
-  <p>
-    Sometimes noticing your state is enough.
-    Sometimes you want to understand more deeply
-    why you’re in this point
-    and how to move forward more calmly.
-  </p>
-  <button onclick="window.location.href='after-50.html'">
-    Continue deeper
+  <button class="primary" onclick="window.location.href='after-50.html'">
+    Go deeper
   </button>
 </section>
 
 <script>
-function next(n) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById('s'+n).classList.add('active');
+function next(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('a'+n).classList.add('active');
   window.scrollTo(0,0);
 }
 </script>
