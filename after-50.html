@@ -2,178 +2,107 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Deep reflection</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deep Reflection</title>
 <style>
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-  background: #0f1115;
-  color: #f2f2f2;
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Inter,sans-serif;
+  background:#0f1115;
+  color:#f2f2f2;
 }
 .screen {
-  min-height: 100vh;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 32px;
-  text-align: center;
+  min-height:100vh;
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:32px;
+  text-align:center;
 }
-.screen.active { display: flex; }
-h2 { font-size: 22px; margin-bottom: 12px; }
-p { max-width: 560px; line-height: 1.6; opacity: .9; }
+.screen.active { display:flex; }
+p { max-width:600px; line-height:1.6; opacity:.9; }
 button {
-  margin-top: 28px;
-  padding: 14px 28px;
-  font-size: 16px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  background: #ffffff;
-  color: #000;
+  margin-top:28px;
+  padding:14px 28px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
 }
+.primary { background:#fff; color:#000; }
 </style>
 </head>
 
 <body>
 
-<section class="screen active" id="s1">
-  <h2>This is not only about you</h2>
-  <p>
-    If you’re here, you’ve already understood something important:
-    your state is not accidental.
-  </p>
-  <p>
-    It’s connected not only to personal choices,
-    but to the world we live in now.
-  </p>
-  <button onclick="next(2)">Next</button>
+<section class="screen active" id="d1">
+<p>This is not only about you.</p>
+<button class="primary" onclick="next(2)">Continue</button>
 </section>
 
-<section class="screen" id="s2">
-  <h2>The world changed. We didn’t</h2>
-  <p>
-    Speed, uncertainty, and constant comparison became normal.
-  </p>
-  <p>
-    But our inner expectations stayed the same:
-    stability, clarity, safety.
-  </p>
-  <p>This gap creates constant tension.</p>
-  <button onclick="next(3)">Next</button>
+<section class="screen" id="d2">
+<p>The world has changed. We haven’t.</p>
+<button class="primary" onclick="next(3)">Continue</button>
 </section>
 
-<section class="screen" id="s3">
-  <h2>Old rules no longer work</h2>
-  <p>
-    Before, effort was enough to slowly build a life.
-    Now effort doesn’t always bring meaning.
-  </p>
-  <p>This is not your fault. Conditions changed.</p>
-  <button onclick="next(4)">Next</button>
+<section class="screen" id="d3">
+<p>Old rules no longer work the same way.</p>
+<button class="primary" onclick="next(4)">Continue</button>
 </section>
 
-<section class="screen" id="s4">
-  <h2>This is not an individual problem</h2>
-  <p>
-    Quiet exhaustion and loss of direction
-    became a shared state.
-  </p>
-  <p>
-    Most people continue on autopilot
-    until a breakdown happens.
-  </p>
-  <button onclick="next(5)">Next</button>
+<section class="screen" id="d4">
+<p>This is not an individual failure. It’s a mass condition.</p>
+<button class="primary" onclick="next(5)">Continue</button>
 </section>
 
-<section class="screen" id="s5">
-  <h2>You are not weaker — you’re more sensitive</h2>
-  <p>
-    Some people notice misalignment earlier.
-    This is not weakness.
-  </p>
-  <p>It’s the ability to feel when something doesn’t fit.</p>
-  <button onclick="next(6)">Next</button>
+<section class="screen" id="d5">
+<p>You’re not weaker. You’re more sensitive.</p>
+<button class="primary" onclick="next(6)">Continue</button>
 </section>
 
-<section class="screen" id="s6">
-  <h2>The illusion of normality</h2>
-  <p>
-    From the outside it seems others are coping.
-    Most simply never stop to look inward.
-  </p>
-  <p>You already did.</p>
-  <button onclick="next(7)">Next</button>
+<section class="screen" id="d6">
+<p>The illusion that everyone else is fine is just that — an illusion.</p>
+<button class="primary" onclick="next(7)">Continue</button>
 </section>
 
-<section class="screen" id="s7">
-  <h2>This is not about decisions</h2>
-  <p>
-    You don’t need to urgently change jobs,
-    countries, or lives.
-  </p>
-  <p>
-    First comes inner grounding —
-    understanding where you are
-    and what truly matters to you.
-  </p>
-  <button onclick="next(8)">Next</button>
+<section class="screen" id="d7">
+<p>This is not about quick decisions.</p>
+<button class="primary" onclick="next(8)">Continue</button>
 </section>
 
-<section class="screen" id="s8">
-  <h2>You’re not in crisis — you’re in transition</h2>
-  <p>
-    Transition feels like loss of clarity.
-    But it opens a chance
-    to build life more honestly.
-  </p>
-  <button onclick="next(9)">Next</button>
+<section class="screen" id="d8">
+<p>You are not in a crisis. You are in a transition.</p>
+<button class="primary" onclick="next(9)">Continue</button>
 </section>
 
-<section class="screen" id="s9">
-  <h2>Something stopped aligning</h2>
-  <p>
-    What you feel is not a mistake.
-    It’s a signal.
-  </p>
-  <p>
-    Your old way of living
-    no longer matches who you are.
-  </p>
-  <p>This is not loss. It’s precision.</p>
-  <button onclick="next(10)">Next</button>
+<section class="screen" id="d9">
+<p>Something has stopped matching.</p>
+<button class="primary" onclick="next(10)">Continue</button>
 </section>
 
-<section class="screen" id="s10">
-  <h2>You don’t have to know what’s next</h2>
-  <p>
-    One of the biggest myths
-    is that you must decide quickly.
-  </p>
-  <p>
-    Transition is about attention,
-    not answers.
-  </p>
-  <p>You already began.</p>
-  <button onclick="next(11)">Next</button>
+<section class="screen" id="d10">
+<p>You are not required to know what to do next.</p>
+<button class="primary" onclick="next(11)">Continue</button>
 </section>
 
-<section class="screen" id="s11">
-  <h2>What you already did</h2>
-  <p>You stopped. You looked inward. You didn’t escape.</p>
-  <p>
-    Many people avoid this for years.
-    This doesn’t make you better —
-    but it gives you a chance
-    to live more consciously.
-  </p>
+<section class="screen" id="d11">
+<p>You stopped. You looked inside. You didn’t run.</p>
+<button class="primary" onclick="next(12)">Continue</button>
+</section>
+
+<section class="screen" id="d12">
+<p>For many people, this never happens.</p>
+<button class="primary" onclick="next(13)">Continue</button>
+</section>
+
+<section class="screen" id="d13">
+<p>You are not here by accident.</p>
 </section>
 
 <script>
-function next(n) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById('s'+n).classList.add('active');
+function next(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('d'+n).classList.add('active');
   window.scrollTo(0,0);
 }
 </script>
