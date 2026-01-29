@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>You’re okay</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
   background: #0f1115;
   color: #f2f2f2;
 }
@@ -19,10 +20,17 @@ body {
   align-items: center;
   padding: 32px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: .35s;
 }
-.screen.active { display: flex; }
+.screen.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
 h1 { font-size: 32px; margin-bottom: 16px; }
-h2 { font-size: 22px; margin-bottom: 12px; }
+h2 { font-size: 22px; margin-bottom: 12px; font-weight: 500; }
 p { max-width: 560px; line-height: 1.6; opacity: .9; }
 button {
   margin-top: 28px;
@@ -31,9 +39,14 @@ button {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  background: #ffffff;
-  color: #000;
 }
+.primary { background: #fff; color: #000; }
+.secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.3);
+}
+.price { margin-top: 12px; opacity: .7; }
 </style>
 </head>
 
@@ -42,74 +55,85 @@ button {
 <section class="screen active" id="s1">
   <h1>You’re okay</h1>
   <p>
-    Sometimes it feels like everyone around you is doing fine —
+    Sometimes it feels like everyone else is doing fine —
     working, traveling, living a “proper” life.
+    And inside there’s tiredness, irritation, emptiness,
+    or a sense that you took a wrong turn somewhere.
   </p>
   <p>
-    And inside — fatigue, irritation, emptiness,
-    or the feeling that you somehow went the wrong way.
-  </p>
-  <p>
-    This is not laziness. Not weakness.
+    This isn’t laziness. Not weakness.
     And not “something wrong with you”.
-  </p>
-  <p>
     Most often, it’s a signal that you’ve lived too long
-    in the noise of other people’s expectations
+    inside other people’s expectations
     and stopped hearing yourself.
   </p>
-  <button onclick="next(2)">Check in</button>
+  <button class="primary" onclick="next(2)">Check your state</button>
 </section>
 
 <section class="screen" id="s2">
-  <h2>You’re not here to urgently change anything</h2>
+  <h2>You’re not here to urgently change your life</h2>
   <p>
     You don’t need to make decisions,
     set goals, or pull yourself together.
+    Right now, it’s enough to simply look
+    at your state without self-criticism or pressure.
   </p>
-  <p>
-    Right now, it’s enough
-    to simply look at your state
-    without self-criticism or pressure.
-  </p>
-  <button onclick="next(3)">Next</button>
+  <button class="primary" onclick="next(3)">Continue</button>
 </section>
 
 <section class="screen" id="s3">
   <h2>A small observation</h2>
   <p>
     Many people feel tired, anxious, or stuck
-    not because something is wrong with them,
-    but because they ignored themselves for too long.
+    not because something is broken in them,
+    but because they’ve ignored themselves for too long.
+    This isn’t a malfunction.
+    It’s a reaction.
   </p>
-  <p>This is not a breakdown. It’s a reaction.</p>
-  <button onclick="next(4)">Go deeper</button>
+  <button class="primary" onclick="next(4)">I want to understand deeper</button>
 </section>
 
 <section class="screen" id="s4">
-  <h2>This is not a diagnosis and not advice</h2>
+  <h2>Let’s pause for a moment</h2>
   <p>
-    This format doesn’t explain who you are
-    or tell you how to live.
+    This check-in is not an instruction
+    and not a life plan.
+    It’s a calm observation
+    of what’s happening inside you right now.
   </p>
+  <button class="primary" onclick="next(5)">Continue</button>
+</section>
+
+<section class="screen" id="s5">
+  <h2>You really are okay</h2>
   <p>
-    It exists for one reason —
-    to help you pause for a moment
-    and see your current state a bit more clearly,
-    without pressure or demands.
+    Feeling tired, doubtful, or lost
+    doesn’t mean you’re weak
+    or that something is wrong with you.
+    Many people live in constant inner tension,
+    even if everything looks fine on the outside.
   </p>
+  <button class="primary" onclick="next(6)">Continue</button>
+</section>
+
+<section class="screen" id="s6">
+  <h2>You can go a little deeper</h2>
   <p>
-    If you feel ready to quietly look inward,
-    you can continue.
+    Sometimes it’s enough to notice your state.
+    And sometimes there’s a need to understand
+    why you ended up here
+    and what might help you move forward more calmly.
   </p>
-  <button onclick="window.location.href='after-10.html'">
-    Continue to the check-in
+  <div class="price">Quiet reflection · 10 €</div>
+  <button class="primary"
+    onclick="window.location.href='https://buy.stripe.com/5kQaEZ0KQ5KCbDAghGgjC00'">
+    Open check-in
   </button>
 </section>
 
 <script>
-function next(n) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+function next(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById('s'+n).classList.add('active');
   window.scrollTo(0,0);
 }
