@@ -28,8 +28,18 @@ button {
   border-radius:999px;
   border:none;
   cursor:pointer;
+  font-size:16px;
 }
 .primary { background:#fff; color:#000; }
+.secondary {
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.3);
+}
+.price {
+  margin-top:12px;
+  opacity:.7;
+}
 </style>
 </head>
 
@@ -55,10 +65,31 @@ button {
 <section class="screen" id="a3">
   <p>
     Something may have stopped aligning —
-    not dramatically, but quietly over time.
+    not suddenly, but quietly over time.
   </p>
-  <button class="primary" onclick="window.location.href='after-50.html'">
+  <button class="primary" onclick="next(4)">Continue</button>
+</section>
+
+<!-- ФИНАЛ ПОСЛЕ 10 € -->
+<section class="screen" id="a4">
+  <p>
+    You’re not here by accident.
+    If this reflection resonated,
+    you may want to understand more deeply
+    why this state appeared
+    and what kind of transition you’re actually in.
+  </p>
+
+  <div class="price">Deep reflection · 50 €</div>
+
+  <!-- КНОПКА НА STRIPE 50 € -->
+  <button class="primary"
+    onclick="window.location.href='https://buy.stripe.com/fZu8wR9hm3CugXUd5ugjC01'">
     Go deeper
+  </button>
+
+  <button class="secondary" onclick="window.location.href='index.html'">
+    Return to start
   </button>
 </section>
 
