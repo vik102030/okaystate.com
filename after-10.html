@@ -36,10 +36,6 @@ button {
   color:#fff;
   border:1px solid rgba(255,255,255,.3);
 }
-.price {
-  margin-top:12px;
-  opacity:.7;
-}
 </style>
 </head>
 
@@ -70,22 +66,17 @@ button {
   <button class="primary" onclick="next(4)">Continue</button>
 </section>
 
-<!-- ФИНАЛ ПОСЛЕ 10 € -->
+<!-- ФИНАЛ ВТОРОГО ШАГА -->
 <section class="screen" id="a4">
   <p>
     You’re not here by accident.
     If this reflection resonated,
-    you may want to understand more deeply
-    why this state appeared
-    and what kind of transition you’re actually in.
+    you may want to continue a little deeper.
   </p>
 
-  <div class="price">Deep reflection · 50 €</div>
-
-  <!-- КНОПКА НА STRIPE 50 € -->
-  <button class="primary"
-    onclick="window.location.href='https://buy.stripe.com/fZu8wR9hm3CugXUd5ugjC01'">
-    Go deeper
+  <!-- ПЕРЕХОД НА ТРЕТИЙ ФАЙЛ -->
+  <button class="primary" onclick="window.location.href='deep.html'">
+    Continue deeper
   </button>
 
   <button class="secondary" onclick="window.location.href='index.html'">
